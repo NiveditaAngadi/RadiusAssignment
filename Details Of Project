@@ -7,7 +7,9 @@ Ex. 1 : Property Type : Land, Number of Rooms: 1 to 3 rooms.
 Ex. 2 : Property Type : Boat House, Other Facilities : Garage
 c) Use Core Data to Persist the data, so every time you will load data from the DB, and refresh your DB from API once a day.
 
-
+Note: Project supports 
+iOS version: from iOS 9 and above. 
+Device type: iPhone
 
 To achieve the task created a Xcode project - RadiusAssignment 
 
