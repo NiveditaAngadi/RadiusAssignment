@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ExclusionOption" representedClassName=".ExclusionOption" syncable="YES">
+        <attribute name="exclusionFacilityID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exclusionOptionID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indexInList" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="exclusionOption" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExclusionOptionsList" inverseName="exclusion_optionlist" inverseEntity="ExclusionOptionsList" syncable="YES"/>
+    </entity>
+    <entity name="ExclusionOptionsList" representedClassName=".ExclusionOptionsList" syncable="YES">
+        <attribute name="exclusionOptionsList" optional="YES" attributeType="Transformable" customClassName=".[ExclusionOption]" syncable="YES"/>
+        <relationship name="exclusion_optionlist" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ExclusionOption" inverseName="exclusionOption" inverseEntity="ExclusionOption" syncable="YES"/>
+    </entity>
+    <entity name="Facility" representedClassName=".Facility" syncable="YES">
+        <attribute name="facilityID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="facilityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indexInList" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="facility_options" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FacilityOptions" inverseName="facility" inverseEntity="FacilityOptions" syncable="YES"/>
+    </entity>
+    <entity name="FacilityOptions" representedClassName=".FacilityOptions" syncable="YES">
+        <attribute name="enableStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="indexInList" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="optionIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="optionID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="optionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectStatus" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="facility" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Facility" inverseName="facility_options" inverseEntity="Facility" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ExclusionOption" positionX="-533" positionY="-747" width="128" height="103"/>
+        <element name="ExclusionOptionsList" positionX="-810" positionY="-756" width="216" height="73"/>
+        <element name="Facility" positionX="-929" positionY="-574" width="128" height="105"/>
+        <element name="FacilityOptions" positionX="-623" positionY="-508" width="128" height="150"/>
+    </elements>
+</model>
