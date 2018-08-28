@@ -1,0 +1,47 @@
+Tasks :
+a) From the API, display the list of facilities and its options by creating a UI, so that user can select any one options from each facility. Display name and icon. For Example,
+i) Property Type : Apartment, Condo, Boat House, Land - User can select only one among this
+b) Add the exclusion list by extending the above UI, so that user can’t able to select from the exclusions combinations.
+For example, User can’t select these options together.
+Ex. 1 : Property Type : Land, Number of Rooms: 1 to 3 rooms.
+Ex. 2 : Property Type : Boat House, Other Facilities : Garage
+c) Use Core Data to Persist the data, so every time you will load data from the DB, and refresh your DB from API once a day.
+
+
+
+To achieve the task created a Xcode project - RadiusAssignment 
+
+Project consists of various modules. 
+1. Networking: Various sub modules to handle the network interaction with server. Contains various helper submodules like ->
+a)Model - Its view model, which handles the logic related to data. Eg.: Fetch, save and update of data/entity in persistance 
+store. 
+b) Encoding: Submodule defines the various encoding methods like Parameter encoding, URL, JSON parameter encoding which
+is helper class during the integration of API's.
+c)End Point: Module responsible for setting up the urlpath,http method, http task - such as setting up request, headers
+d)Manager: Network manager handles the fetch operation 
+e)Service: Contains helper classes like 
+   1)EndPoint Type, HTTP Method, HTTP Tasks - structure defines the HTTPMethod, base url, url path, http task and
+headers. 
+   2) Router: Class responsible for setting up the request.
+
+
+2.Core Data Related: Cored Data Stack, Data Model
+
+3.Constants: Utility file for common constant in the prokect 
+
+4.Views: Folder contains various custom - UIView and related classes like - Tableviewcell, collection view and cells used in
+the project. 
+
+5. Appdelegate and view controller -> ViewController is the landing page where facility list is shown in the tableview controller 
+in each row. Facility options are shown in the collection view in each row. The fetch and loading of data is handled by 
+FecthResultsController in the tableview. 
+-> Option selection is shown as light gray color selection 
+-> Option disable is shown in light red color mask with user interaction disabled. 
+-> Exclusion options are handled both ways from the list of exlusion options. 
+Eg.: 
+1. [{1,4}, {2,6}] -> Indicates the Property type(1-FacilityID), land (4 -OptionID) selection -> then user can not select 
+the Number Of Rooms(2 - Facility ID), 1 to 3 Rooms (6 -OptionID).  
+If user selects the Number Of Rooms(2 - Facility ID), 1 to 3 Rooms (6 -OptionID), user can not select the Property type(1-FacilityID), 
+land (4 -OptionID).
+
+
