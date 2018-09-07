@@ -1,0 +1,24 @@
+func reverseArray() {
+    let str = "I.Love.Working.In.Bangalore"
+    let stringsOfWordsArray = str.components(separatedBy: ".")
+    let reversedArray = Array(stringsOfWordsArray.reversed())
+    var output:String = ""
+    var finalOutput:String = ""
+    var reversedModifiedArray:[String] = [String]()
+
+    for  index in 0..<reversedArray.count {
+        
+        if (index == reversedArray.count - 1) {
+            output = reversedArray[index]
+        }
+        else {
+            output = reversedArray[index] + "."
+        }
+        reversedModifiedArray.append(output)
+    }
+    for word in reversedModifiedArray {
+        finalOutput += word
+    }
+}
+
+//Output: Bangalore.In.Working.Love.I
